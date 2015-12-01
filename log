@@ -1,0 +1,24 @@
+#auto generando archivos para el servidor
+$ django-admin.py startproject nombre_sitio
+#esto nos va generar una carpeta nombre_sitio y dentro un manage.py
+
+#iniciando el servidor
+$ python manage.py runserver
+
+#configurando la base de datos
+#abrir dentro de nombre_sitio, settings.py
+#por default va trabajar con sqlite3, que es ligero y viene incluido
+#con python, si no se quiere otro motor dejar como está
+
+DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+    }
+}
+
+#crear las tablas de la base de datos de acuerdo a
+#INSTALLED_APPS
+$ python manage.py syncdb
+#lanzará un mensaje para crear un nuevo superusuario
+#que se utilizará en /admin 
