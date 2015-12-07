@@ -1,3 +1,5 @@
+user: humano
+pass: humano
 #auto generando archivos para el servidor
 $ django-admin.py startproject nombre_sitio
 #esto nos va generar una carpeta nombre_sitio y dentro un manage.py
@@ -21,4 +23,17 @@ DATABASES = {
 #INSTALLED_APPS
 $ python manage.py syncdb
 #lanzará un mensaje para crear un nuevo superusuario
-#que se utilizará en /admin 
+#que se utilizará en /admin
+
+#ahora toca crear una app para considerarla dentro de la base de datos
+$ python manage.py startapp nombre_app
+#luego agregarlo a INSTALLED_APPS
+#dentro de settings.py
+#agregar a la base de datos de nuevo con:
+$ python manage.py syncdb
+#luego hacer modificable la nueva app dentro de admin
+#en el archivo nombre_app/admin.py
+
+7/dic/2015 -> revisando el curso en youtube de django, me entero que:
+#toda app debe tener su carpeta propia de templates, dentro de una carpeta
+#general templates
