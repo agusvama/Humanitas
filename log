@@ -37,3 +37,21 @@ $ python manage.py syncdb
 7/dic/2015 -> revisando el curso en youtube de django, me entero que:
 #toda app debe tener su carpeta propia de templates, dentro de una carpeta
 #general templates
+
+#el archivo urls.py contiene expresiones regulares
+^ denota el principio del texto
+$ denota el final del texto
+\d representa un dígito
++ indica que el ítem anterior debería ser repetido <strong>por lo menos</strong> una vez
+() para encerrar una parte del patrón
+
+IMPORTANTE APRENDIDO HOY:
+#para llamar al html dentro de views.py, se usan rutas, es decir project/templates/app/archivo.html
+#en cambio para llamar a la vista, se utilizan puntos, se importan: app.vista
+##porque las vistas son declaradas en métodos, las templates son archivos
+
+LAS VIEWS....
+conectaN modelos con plantillas
+
+7/dic/ en taller de investigacion
+Ahora sabemos como agregar un destino a un botón, comienza a darle forma

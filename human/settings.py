@@ -39,6 +39,9 @@ INSTALLED_APPS = (
     'escuela',
 )
 
+TEMPLATE_DIRS = (
+    '/home/maldad/Documentos/ing_software/humanitas2/templates/',
+)
 MIDDLEWARE_CLASSES = (
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
@@ -80,4 +83,13 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/1.6/howto/static-files/
 
+#STATIC_ROOT = '/home/maldad/Documentos/ing_software/humanitas2/static/static_root/'
+STATIC_ROOT = os.path.join(BASE_DIR, 'static', 'static_root')
 STATIC_URL = '/static/'
+STATICFILES_DIRS = (
+    #'/home/maldad/Documentos/ing_software/humanitas2/static/static_dirs/',
+    os.path.join(BASE_DIR, 'static', 'static_dirs'),
+)
+#MEDIA_ROOT = '/home/maldad/Documentos/ing_software/humanitas2/static/media/'
+MEDIA_ROOT = os.path.join(BASE_DIR, 'static', 'media')
+MEDIA_URL = '/media/'
