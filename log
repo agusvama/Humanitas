@@ -55,3 +55,8 @@ conectaN modelos con plantillas
 
 7/dic/ en taller de investigacion
 Ahora sabemos como agregar un destino a un botón, comienza a darle forma
+
+<!--button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent" id="add"-->
+<!--i class="material-icons" role="presentation">add</i-->
+<!--span class="visuallyhidden">Add</span-->
+<!--/button-->
