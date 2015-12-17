@@ -13,12 +13,18 @@ class Tutor(models.Model):
     def __unicode__(self):
         return self.nombre+' '+self.apPaterno+' '+self.apMaterno
 
+class Materia(models.Model):
+    nombre_materia = models.CharField(max_length = 50)
+
+    def __unicode__(self):
+        return self.nombre_materia
+
 class Estudiante(models.Model):
     nombre = models.CharField(max_length = 20)
     apPaterno = models.CharField(max_length = 20)
     apMaterno = models.CharField(max_length = 20)
-    calificacion = models.IntegerField(default=0)
     tutor = models.ForeignKey(Tutor)
+    grado = models.IntegerField(blank=True)
 
     def __unicode__(self):
         return self.apPaterno+' '+self.apMaterno+' '+self.nombre
@@ -35,17 +41,22 @@ class Profesor(models.Model):
     def __unicode__(self):
         return self.nombre + ' ' + self.apPaterno + ' ' + self.apMaterno + ' ' +self.email
 
-class Departamento(models.Model):
-    clave_dpto = models.CharField(max_length = 10, primary_key = True)
-    nombre_dpto = models.CharField(max_length = 20)
+class Calificaciones(models.Model):
+    estudiante = models.ForeignKey(Estudiante)
+    materia1 = models.ForeignKey(Materia, related_name='materia_materia1')
+    calif1 = models.DecimalField(max_digits = 3, decimal_places = 1, default=0.0)
+    materia2 = models.ForeignKey(Materia, related_name='materia_materia2')
+    calif2 = models.DecimalField(max_digits = 3, decimal_places = 1, default=0.0)
+    materia3 = models.ForeignKey(Materia, related_name='materia_materia3')
+    calif3 = models.DecimalField(max_digits = 3, decimal_places = 1, default=0.0)
+    materia4 = models.ForeignKey(Materia, related_name='materia_materia4')
+    calif4 = models.DecimalField(max_digits = 3, decimal_places = 1, default=0.0)
+    materia5 = models.ForeignKey(Materia, related_name='materia_materia5')
+    calif5 = models.DecimalField(max_digits = 3, decimal_places = 1, default=0.0)
+    materia6 = models.ForeignKey(Materia, related_name='materia_materia6')
+    calif6 = models.DecimalField(max_digits = 3, decimal_places = 1, default=0.0)
+    promedio = models.DecimalField(max_digits = 3, decimal_places = 1, default=0.0)
+    promovido = models.BooleanField(default=False)
 
-class Curso(models.Model):
-    cedula_profesor = models.ForeignKey(Profesor)
-    clave_dpto = models.ForeignKey(Departamento)
-    seccion = models.IntegerField(default=0)
-    grado_curso = models.IntegerField(default=0)
-
-class Alumno_curso(models.Model):
-    id_estudiante = models.ForeignKey(Estudiante)
-    clave_curso = models.ForeignKey(Curso)
-    cedula_profesor = models.ForeignKey(Profesor)
+    def __unicode__(self):
+        return str(self.estudiante)# + ' ' + str(self.promedio)+ ' ' + str(self.promovido)

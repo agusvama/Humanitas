@@ -60,3 +60,9 @@ Ahora sabemos como agregar un destino a un botón, comienza a darle forma
 <!--i class="material-icons" role="presentation">add</i-->
 <!--span class="visuallyhidden">Add</span-->
 <!--/button-->
+
+
+#agregar un nuevo registro desde la consola:
+$ python manage.py shell
+$ from escuela.models import <ClassName>
+$ nuevo = Class(attrib=value, attrib=value, ... atrib=value)

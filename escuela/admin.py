@@ -3,9 +3,8 @@ from django.contrib import admin
 from escuela.models import Estudiante
 from escuela.models import Tutor
 from escuela.models import Profesor
-from escuela.models import Departamento
-from escuela.models import Curso
-from escuela.models import Alumno_curso
+from escuela.models import Materia
+from escuela.models import Calificaciones
 
 #create your models display here
 class ProfesorAdmin(admin.ModelAdmin):
@@ -28,6 +27,5 @@ class ProfesorAdmin(admin.ModelAdmin):
 admin.site.register(Estudiante)
 admin.site.register(Tutor)
 admin.site.register(Profesor, ProfesorAdmin)
-admin.site.register(Departamento)
-admin.site.register(Curso)
-admin.site.register(Alumno_curso)
+admin.site.register(Materia)
+admin.site.register(Calificaciones)
